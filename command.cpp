@@ -139,6 +139,25 @@ void command_2(int argc, char *argv[])
     }
     else if (algorithm == "flash")
     {
+        if (output == "-time")
+        {
+
+            bubble_sort_time(a, input_size, time);
+            cout << "Running time: " << time << endl;
+        }
+        else if (output == "-comp")
+        {
+
+            bubble_sort_comp(a, input_size, count_comp);
+            cout << "Comparisions: " << count_comp << endl;
+        }
+        else if (output == "-both")
+        {
+            bubble_sort_comp(a, input_size, count_comp);
+            bubble_sort_time(b, input_size, time);
+            cout << "Running time: " << time << endl;
+            cout << "Comparisions: " << count_comp << endl;
+        }
     }
     else if (algorithm == "shaker")
     {
