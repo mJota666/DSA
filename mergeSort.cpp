@@ -74,8 +74,8 @@ void merge_comp_run(int a[], int leftIndex, int midIndex, int rightIndex, long l
     {
         a[leftIndex++] = rightArray[j++];
     }
-    delete leftArray;
-    delete rightArray;
+    delete []leftArray;
+    delete []rightArray;
 }
 
 void merge_sort_comp_run(int a[], int leftIndex, int rightIndex, long long &count_comp)
