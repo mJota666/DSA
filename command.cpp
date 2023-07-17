@@ -240,7 +240,7 @@ void command_3(int argc, char *argv[])
             unsigned long long count_comp = 0;
             long double time_use = 0;
             quick_sort_comp(a, input_size, count_comp);
-            // quick_sort_time(a1, input_size, time_use);
+            quick_sort_time(a1, input_size, time_use);
             if (output_param == "-time")
             {
                 cout << "Running time: " << time_use << endl;
