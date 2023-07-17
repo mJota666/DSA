@@ -1,4 +1,4 @@
-#include "header.h"
+#include "command.h"
 
 void printArray(int a[], int n)
 {
