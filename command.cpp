@@ -12,7 +12,26 @@
 #include "shakerSort.h"
 #include "mergeSort.h"
 #include "quickSort.h"
-
+void write_input_file (int a[] ,int n)
+{
+    ofstream output("input.txt");
+    GenerateRandomData(a, n);
+    output << n << endl;
+    for (int i = 0; i < n; i++)
+    {
+        output << a[i] << " ";
+    }
+    output.close();
+}
+void write_output_file (int a[] ,int n)
+{
+    ofstream output("output.txt");
+    for (int i = 0; i < n; i++)
+    {
+        output << a[i] << " ";
+    }
+    output.close();
+}
 void command_2(int argc, char *argv[])
 {
 
@@ -57,7 +76,7 @@ void command_2(int argc, char *argv[])
     {
         GenerateData(a, input_size, 2);
     }
-
+    write_input_file(a , input_size);
     int *b = new int[input_size];
     memcpy(b, a, input_size * sizeof(int));
     long long count_comp = 0;
@@ -139,6 +158,24 @@ void command_2(int argc, char *argv[])
     }
     else if (algorithm == "flash")
     {
+        if (output == "-time")
+        {
+            flash_sort_time(a, input_size, time);
+            cout << "Running time: " << time << endl;
+        }
+        else if (output == "-comp")
+        {
+
+            flash_sort_comp(a, input_size, count_comp);
+            cout << "Comparisions: " << count_comp << endl;
+        }
+        else if (output == "-both")
+        {
+            flash_sort_comp(a, input_size, count_comp);
+            flash_sort_time(b, input_size, time);
+            cout << "Running time: " << time << endl;
+            cout << "Comparisions: " << count_comp << endl;
+        }
     }
     else if (algorithm == "shaker")
     {
@@ -163,19 +200,111 @@ void command_2(int argc, char *argv[])
     }
     else if (algorithm == "counting")
     {
+        if (output == "-time")
+        {
+            counting_sort_time(a, input_size, time);
+            cout << "Running time: " << time << endl;
+        }
+        else if (output == "-comp")
+        {
+
+            counting_sort_comp(a, input_size, count_comp);
+            cout << "Comparisions: " << count_comp << endl;
+        }
+        else if (output == "-both")
+        {
+            counting_sort_comp(a, input_size, count_comp);
+            counting_sort_time(b, input_size, time);
+            cout << "Running time: " << time << endl;
+            cout << "Comparisions: " << count_comp << endl;
+        }
     }
     else if (algorithm == "quick")
     {
+        unsigned long long count = 0;
+        if (output == "-time")
+        {
+            quick_sort_time(a, input_size, time);
+            cout << "Running time: " << time << endl;
+        }
+        else if (output == "-comp")
+        {
+
+            quick_sort_comp(a, input_size, count);
+            cout << "Comparisions: " << count << endl;
+        }
+        else if (output == "-both")
+        {
+            quick_sort_comp(a, input_size, count);
+            quick_sort_time(b, input_size, time);
+            cout << "Running time: " << time << endl;
+            cout << "Comparisions: " << count << endl;
+        }
     }
     else if (algorithm == "shell")
     {
+        if (output == "-time")
+        {
+            shell_sort_time(a, input_size, time);
+            cout << "Running time: " << time << endl;
+        }
+        else if (output == "-comp")
+        {
+
+            shell_sort_comp(a, input_size, count_comp);
+            cout << "Comparisions: " << count_comp << endl;
+        }
+        else if (output == "-both")
+        {
+            shell_sort_comp(a, input_size, count_comp);
+            shell_sort_time(b, input_size, time);
+            cout << "Running time: " << time << endl;
+            cout << "Comparisions: " << count_comp << endl;
+        }
     }
     else if (algorithm == "merge")
     {
+        if (output == "-time")
+        {
+            merge_sort_time(a, input_size, time);
+            cout << "Running time: " << time << endl;
+        }
+        else if (output == "-comp")
+        {
+
+            merge_sort_comp(a, input_size, count_comp);
+            cout << "Comparisions: " << count_comp << endl;
+        }
+        else if (output == "-both")
+        {
+            merge_sort_comp(a, input_size, count_comp);
+            merge_sort_time(b, input_size, time);
+            cout << "Running time: " << time << endl;
+            cout << "Comparisions: " << count_comp << endl;
+        }
     }
     else if (algorithm == "insertion")
     {
+        if (output == "-time")
+        {
+            insertion_sort_time(a, input_size, time);
+            cout << "Running time: " << time << endl;
+        }
+        else if (output == "-comp")
+        {
+
+            insertion_sort_comp(a, input_size, count_comp);
+            cout << "Comparisions: " << count_comp << endl;
+        }
+        else if (output == "-both")
+        {
+            insertion_sort_comp(a, input_size, count_comp);
+            insertion_sort_time(b, input_size, time);
+            cout << "Running time: " << time << endl;
+            cout << "Comparisions: " << count_comp << endl;
+        }
     }
+    write_output_file (a, input_size);
     // clear mem
     delete[] a;
     delete[] b;

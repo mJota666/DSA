@@ -14,5 +14,8 @@ int main(int argc, char **argv)
     if (argc == 5 && !strcmp(argv[1], "-a") && (string(argv[3]).find(".") == string::npos)) {
         command_3(argc, argv);
     }
-    cout<<"hahaha"<<endl;
+    else if (argc ==6 && (string)argv[1]=="-a")
+    {
+        command_2(argc, argv);
+    }
 } 
