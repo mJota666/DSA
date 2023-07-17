@@ -10,6 +10,7 @@
 #include "radixSort.h"
 #include "selectionSort.h"
 #include "shakerSort.h"
+#include "mergeSort.h"
 
 void command_2(int argc, char *argv[])
 {
@@ -181,6 +182,7 @@ void command_2(int argc, char *argv[])
 
 void command_3(int argc, char *argv[])
 {
+    cout << fixed << setprecision(5);
     string algorithm_sort = argv[2];
     int input_size = stoi(argv[3]);
     string output_param = argv[4];
@@ -214,11 +216,23 @@ void command_3(int argc, char *argv[])
 
         if (algorithm_sort.find("merge") != string::npos)
         {
-            long long count_comp = 0;
+            int count_comp = 0;
             long double time_use = 0;
-            //  merge_sort_comp(a, 0, input_size - 1, count_compare);
-            // merge_sort_time(a1, input_size, time_use);
-            // print_querry(output_param, count_compare, time_use);
+            merge_sort_comp(a, input_size, count_comp);
+            merge_sort_time(a1, input_size, time_use);
+            if (output_param == "-time")
+            {
+                cout << "Running time: " << time_use << endl;
+            }
+            else if (output_param == "-comp")
+            {
+                cout << "Comparisions: " << count_comp << endl;
+            }
+            else if (output_param == "-both")
+            {
+                cout << "Running time: " << time_use << endl;
+                cout << "Comparisions: " << count_comp << endl;
+            }
         }
         else if (algorithm_sort.find("bubble") != string::npos)
         {
@@ -400,6 +414,7 @@ void command_3(int argc, char *argv[])
                 cout << "Comparisions: " << count_comp << endl;
             }
         }
+      
         delete[] a;
         a = nullptr;
         delete[] a1;
