@@ -237,7 +237,7 @@ void command_3(int argc, char *argv[])
         }
         else if (algorithm_sort.find("quick") != string::npos)
         {
-            long long count_comp = 0;
+            unsigned long long count_comp = 0;
             long double time_use = 0;
             quick_sort_comp(a, input_size, count_comp);
             quick_sort_time(a1, input_size, time_use);
