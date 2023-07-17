@@ -1,12 +1,12 @@
 #include "heapSort.h"
 
-int max_comp(int a[], int x, int y, int &count_comp)
+int max_comp(int a[], int x, int y, long long &count_comp)
 {
     count_comp++;
     return a[x] >= a[y] ? x : y;
 }
 
-void heap_rebuild_comp(int a[], int n, int pos, int &count_comp)
+void heap_rebuild_comp(int a[], int n, int pos, long long &count_comp)
 {
     int k = pos;
     bool isHeap = false;
@@ -28,7 +28,7 @@ void heap_rebuild_comp(int a[], int n, int pos, int &count_comp)
         }
     }
 }
-void build_heap_comp(int a[], int n, int &count_comp)
+void build_heap_comp(int a[], int n, long long &count_comp)
 {
     int i = n / 2 - 1;
 
@@ -39,7 +39,7 @@ void build_heap_comp(int a[], int n, int &count_comp)
     }
 }
 
-void heap_sort_comp(int a[], int n, int &count_comp)
+void heap_sort_comp(int a[], int n, long long &count_comp)
 {
     count_comp = 0;
     build_heap_comp(a, n, count_comp);

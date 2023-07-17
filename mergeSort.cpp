@@ -44,7 +44,7 @@ void merge_sort(int a[], int leftIndex, int rightIndex)
     }
 }
 
-void merge_comp_run(int a[], int leftIndex, int midIndex, int rightIndex, int &count_comp)
+void merge_comp_run(int a[], int leftIndex, int midIndex, int rightIndex, long long &count_comp)
 {
     int sizeOfLeftArray = (midIndex - leftIndex) + 1;
     int sizeOfRightArray = (rightIndex - (midIndex + 1)) + 1;
@@ -78,7 +78,7 @@ void merge_comp_run(int a[], int leftIndex, int midIndex, int rightIndex, int &c
     delete rightArray;
 }
 
-void merge_sort_comp_run(int a[], int leftIndex, int rightIndex, int &count_comp)
+void merge_sort_comp_run(int a[], int leftIndex, int rightIndex, long long &count_comp)
 {
     if (++count_comp && leftIndex < rightIndex)
     {
@@ -88,15 +88,15 @@ void merge_sort_comp_run(int a[], int leftIndex, int rightIndex, int &count_comp
         merge_comp_run(a, leftIndex, midIndex, rightIndex, count_comp);
     }
 }
-void merge_sort_comp(int a[], int n, int &count_comp)
+void merge_sort_comp(int a[], int n, long long &count_comp)
 {
     merge_sort_comp_run(a, 0, n - 1, count_comp);
 }
 
-void merge_sort_time(int a[], int n, long double &time_use)
+void merge_sort_time(int a[], int n, long double &time)
 {
     clock_t start = clock();
     merge_sort(a, 0, n - 1);
     clock_t end = clock();
-    time_use = (double)(end - start) / CLOCKS_PER_SEC;
+    time = (double)(end - start) / CLOCKS_PER_SEC;
 }

@@ -1,7 +1,7 @@
 #include "countingSort.h"
 
 #define RANGE 255
-void counting_sort_comp(int *arr, int capacity, int &count_comp)
+void counting_sort_comp(int *arr, int capacity, long long &count_comp)
 {
     count_comp = 0;
     int *output = new int[capacity];

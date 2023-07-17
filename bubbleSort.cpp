@@ -2,7 +2,7 @@
 /*
  https://www.geeksforgeeks.org/bubble-sort/
  */
-void bubble_sort_comp(int *arr, int n, int &count_comp)
+void bubble_sort_comp(int *arr, int n, long long &count_comp)
 {
     count_comp = 0;
     int i, j;

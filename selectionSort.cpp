@@ -1,7 +1,7 @@
 #include "selectionSort.h"
 
 // https://www.geeksforgeeks.org/selection-sort/
-void selection_sort_comp(int *a, int n, int &count_comp)
+void selection_sort_comp(int *a, int n, long long &count_comp)
 {
     count_comp = 0;
     int i, j, min_idx;

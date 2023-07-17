@@ -11,6 +11,7 @@
 #include "selectionSort.h"
 #include "shakerSort.h"
 #include "mergeSort.h"
+#include "quickSort.h"
 
 void command_2(int argc, char *argv[])
 {
@@ -59,7 +60,7 @@ void command_2(int argc, char *argv[])
 
     int *b = new int[input_size];
     memcpy(b, a, input_size * sizeof(int));
-    int count_comp = 0;
+    long long count_comp = 0;
     long double time = 0;
     cout << "ALGORITHM MODE" << endl;
     cout << "Algorithm: " << algorithm << " sort" << endl;
@@ -216,7 +217,7 @@ void command_3(int argc, char *argv[])
 
         if (algorithm_sort.find("merge") != string::npos)
         {
-            int count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             merge_sort_comp(a, input_size, count_comp);
             merge_sort_time(a1, input_size, time_use);
@@ -234,9 +235,29 @@ void command_3(int argc, char *argv[])
                 cout << "Comparisions: " << count_comp << endl;
             }
         }
+        else if (algorithm_sort.find("quick") != string::npos)
+        {
+            long long count_comp = 0;
+            long double time_use = 0;
+            quick_sort_comp(a, input_size, count_comp);
+            quick_sort_time(a1, input_size, time_use);
+            if (output_param == "-time")
+            {
+                cout << "Running time: " << time_use << endl;
+            }
+            else if (output_param == "-comp")
+            {
+                cout << "Comparisions: " << count_comp << endl;
+            }
+            else if (output_param == "-both")
+            {
+                cout << "Running time: " << time_use << endl;
+                cout << "Comparisions: " << count_comp << endl;
+            }
+        }
         else if (algorithm_sort.find("bubble") != string::npos)
         {
-            int count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             bubble_sort_comp(a, input_size, count_comp);
             bubble_sort_time(a1, input_size, time_use);
@@ -256,7 +277,7 @@ void command_3(int argc, char *argv[])
         }
         else if (algorithm_sort.find("counting") != string::npos)
         {
-            int count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             counting_sort_comp(a, input_size, count_comp);
             counting_sort_time(a1, input_size, time_use);
@@ -276,7 +297,7 @@ void command_3(int argc, char *argv[])
         }
         else if (algorithm_sort.find("flash") != string::npos)
         {
-            int count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             flash_sort_comp(a, input_size, count_comp);
             flash_sort_time(a1, input_size, time_use);
@@ -296,7 +317,7 @@ void command_3(int argc, char *argv[])
         }
         else if (algorithm_sort.find("heap") != string::npos)
         {
-            int count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             heap_sort_comp(a, input_size, count_comp);
             heap_sort_time(a1, input_size, time_use);
@@ -316,7 +337,7 @@ void command_3(int argc, char *argv[])
         }
         else if (algorithm_sort.find("insertion") != string::npos)
         {
-            int count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             insertion_sort_comp(a, input_size, count_comp);
             insertion_sort_time(a1, input_size, time_use);
@@ -336,7 +357,7 @@ void command_3(int argc, char *argv[])
         }
         else if (algorithm_sort.find("radix") != string::npos)
         {
-            int count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             radix_sort_comp(a, input_size, count_comp);
             radix_sort_time(a1, input_size, time_use);
@@ -356,7 +377,7 @@ void command_3(int argc, char *argv[])
         }
         else if (algorithm_sort.find("selection") != string::npos)
         {
-            int count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             selection_sort_comp(a, input_size, count_comp);
             selection_sort_time(a1, input_size, time_use);
@@ -376,7 +397,7 @@ void command_3(int argc, char *argv[])
         }
         else if (algorithm_sort.find("shaker") != string::npos)
         {
-            int count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             shaker_sort_comp(a, input_size, count_comp);
             shaker_sort_time(a1, input_size, time_use);
@@ -396,7 +417,7 @@ void command_3(int argc, char *argv[])
         }
         else if (algorithm_sort.find("shell") != string::npos)
         {
-            int count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             shell_sort_comp(a, input_size, count_comp);
             shell_sort_time(a1, input_size, time_use);
@@ -550,7 +571,7 @@ void command_1(int argc, char *argv[])
     memcpy(b, a, n * sizeof(int));
     input.close();
     int input_size = n;
-    int count_comp = 0;
+    long long count_comp = 0;
     long double time = 0;
     cout << "ALGORITHM MODE" << endl;
     cout << "Algorithm: " << algorithm_sort << " sort" << endl;
@@ -842,9 +863,9 @@ void command_4(int argc,  char* argv[]) {
     input.close();
 
     int input_size = n;
-    int count_comp1 = 0;
+    long long count_comp1 = 0;
     long double time1 = 0;
-    int count_comp2 = 0;
+    long long count_comp2 = 0;
     long double time2 = 0;
 
     cout << "COMPARE MODE" << endl;

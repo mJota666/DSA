@@ -1,19 +1,19 @@
 #include "shellSort.h"
 
-void shell_sort_comp(int a[], int n, int &count_compare)
+void shell_sort_comp(int a[], int n, long long &count_comp)
 {
     int gap = 1;
-    while (++count_compare && gap < n / 3)
+    while (++count_comp && gap < n / 3)
     {
         gap = 3 * gap + 1;
     }
-    while (++count_compare && gap >= 1)
+    while (++count_comp && gap >= 1)
     {
-        for (int i = gap; ++count_compare, i < n; i++)
+        for (int i = gap; ++count_comp, i < n; i++)
         {
             int key = a[i];
             int j = i;
-            while (++count_compare && j >= gap && ++count_compare && a[j - gap] > key)
+            while (++count_comp && j >= gap && ++count_comp && a[j - gap] > key)
             {
                 a[j] = a[j - gap];
                 j -= gap;
@@ -24,9 +24,9 @@ void shell_sort_comp(int a[], int n, int &count_compare)
     }
 }
 
-void shell_sort_time(int a[], int n, long double &time_use)
+void shell_sort_time(int a[], int n, long double &time)
 {
-    int count_compare = 0;
+    int count_comp = 0;
     clock_t start = clock();
     int gap = 1;
     while (gap < n / 3)
@@ -49,5 +49,5 @@ void shell_sort_time(int a[], int n, long double &time_use)
         gap /= 3;
     }
     clock_t end = clock();
-    time_use = (double)(end - start) / CLOCKS_PER_SEC;
+    time = (double)(end - start) / CLOCKS_PER_SEC;
 }

@@ -1,18 +1,18 @@
 #include "insertionSort.h"
-void insertion_sort_comp(int a[], int n, int &count_compare)
+void insertion_sort_comp(int a[], int n, long long &count_comp)
 {
     for (int i = 1; i < n; ++i)
     {
         int key = a[i];
         int j = i - 1;
-        while (++count_compare && a[j] > key && ++count_compare && j >= 0)
+        while (++count_comp && a[j] > key && ++count_comp && j >= 0)
         {
             a[j + 1] = a[j];
             j--;
         }
         a[j + 1] = key;
     }
-    count_compare += n;
+    count_comp += n;
 }
 // void insertion_sort(int a[], int n)
 //{
@@ -28,7 +28,7 @@ void insertion_sort_comp(int a[], int n, int &count_compare)
 //         a[j + 1] = key;
 //     }
 // }
-void insertion_sort_time(int a[], int n, long double &time_use)
+void insertion_sort_time(int a[], int n, long double &time)
 {
     clock_t start = clock();
     // insertion_sort(a, n);
@@ -44,5 +44,5 @@ void insertion_sort_time(int a[], int n, long double &time_use)
         a[j + 1] = key;
     }
     clock_t end = clock();
-    time_use = (double)(end - start) / CLOCKS_PER_SEC;
+    time = (double)(end - start) / CLOCKS_PER_SEC;
 }
