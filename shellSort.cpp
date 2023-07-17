@@ -9,7 +9,7 @@ void shell_sort_comp(int a[], int n, long long &count_comp)
     }
     while (++count_comp && gap >= 1)
     {
-        for (int i = gap; ++count_comp, i < n; i++)
+        for (int i = gap; i < n; i++)
         {
             int key = a[i];
             int j = i;
@@ -20,13 +20,13 @@ void shell_sort_comp(int a[], int n, long long &count_comp)
             }
             a[j] = key;
         }
+        count_comp += (n - gap) + 1;
         gap /= 3;
     }
 }
 
 void shell_sort_time(int a[], int n, long double &time)
 {
-    int count_comp = 0;
     clock_t start = clock();
     int gap = 1;
     while (gap < n / 3)

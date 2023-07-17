@@ -12,7 +12,7 @@ int partition_comp(int arr[], int low, int high, unsigned long long &count_comp)
             swap(arr[i], arr[j]);
         }
     }
-    count_comp += (high - low);
+    count_comp += (high - low) + 1;
     swap(arr[i + 1], arr[high]);
     return (i + 1);
 }
