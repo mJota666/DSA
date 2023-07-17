@@ -1,6 +1,6 @@
 #include "quickSort.h"
 
-int partition_comp(int arr[], int low, int high, unsigned long long &count_comp)
+int partition_comp(int arr[], int low, int high, long long &count_comp)
 {
     int pivot = arr[high];
     int i = (low - 1);
@@ -17,7 +17,7 @@ int partition_comp(int arr[], int low, int high, unsigned long long &count_comp)
     return (i + 1);
 }
 
-void quick_sort_comp_run(int arr[], int low, int high, unsigned long long &count_comp)
+void quick_sort_comp_run(int arr[], int low, int high, long long &count_comp)
 {
     if (++count_comp && low < high)
     {
@@ -26,7 +26,7 @@ void quick_sort_comp_run(int arr[], int low, int high, unsigned long long &count
         quick_sort_comp_run(arr, pi + 1, high, count_comp);
     }
 }
-void quick_sort_comp(int arr[], int n, unsigned long long &count_comp)
+void quick_sort_comp(int arr[], int n, long long &count_comp)
 {
     quick_sort_comp_run(arr, 0, n - 1, count_comp);
 }

@@ -237,7 +237,7 @@ void command_3(int argc, char *argv[])
         }
         else if (algorithm_sort.find("quick") != string::npos)
         {
-            unsigned long long count_comp = 0;
+            long long count_comp = 0;
             long double time_use = 0;
             quick_sort_comp(a, input_size, count_comp);
             quick_sort_time(a1, input_size, time_use);
@@ -722,8 +722,7 @@ void command_1(int argc, char *argv[])
             cout << "Comparisions: " << count_comp << endl;
         }
     }
-
-    /*else if (algorithm_sort == "quick")
+    else if (algorithm_sort == "quick")
     {
         if (output == "-time")
         {
@@ -742,7 +741,7 @@ void command_1(int argc, char *argv[])
             cout << "Running time: " << time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
-    }*/
+    } 
     else if (algorithm_sort == "shell")
     {
         if (output == "-time")
@@ -816,7 +815,7 @@ void command_1(int argc, char *argv[])
     delete[] a;
     delete[] b;
 }
-/*
+
 void command_4(int argc,  char* argv[]) {
 
 
@@ -1488,4 +1487,4 @@ void command_4(int argc,  char* argv[]) {
     delete[]a2;
     delete[]b2;
 }
-*/
+
