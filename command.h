@@ -1,5 +1,3 @@
-#ifndef HEADER_H
-#define HEADER_H
 #include <iostream>
 #include <fstream>
 #include <cmath>
@@ -19,5 +17,3 @@ void command_3(int argc, char *argv[]);
 void command_4(int argc, char* argv[]);
 void command_5(int argc, char* argv[]);
 void output_file(int n);
-
-#endif
