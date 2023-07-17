@@ -23,8 +23,10 @@ void shell_sort_comp(int a[], int n, int &count_compare)
     }
 }
 
-void shell_sort(int a[], int n)
+void shell_sort_time(int a[], int n, long double &time_use)
 {
+    int count_compare = 0;
+    clock_t start = clock();
     int gap = 1;
     while (gap < n / 3)
     {
@@ -45,7 +47,10 @@ void shell_sort(int a[], int n)
         }
         gap /= 3;
     }
+    clock_t end = clock();
+    time_use = (double)(end - start) / CLOCKS_PER_SEC;
 }
+
 // void shell_sort2(int a[], int n)
 // {
 //     int gaps[] = { 1, 5, 19, 41, 109, 209, 505, 929, 2161, 3905, 8929, 16001, 36289, 64769, 146305, 260609 };
@@ -67,12 +72,3 @@ void shell_sort(int a[], int n)
 //         }
 //     }
 // }
-
-void shell_sort_time(int a[], int n, long double &time_use)
-{
-    int count_compare = 0;
-    clock_t start = clock();
-    shell_sort(a, n);
-    clock_t end = clock();
-    time_use = (double)(end - start) / CLOCKS_PER_SEC;
-}
