@@ -11,7 +11,7 @@ void printArray(int a[], int n)
 
 int main(int argc, char **argv)
 {
-    command_4(argc, argv); return 1;
+    command_4(argc, argv);
     if (argc == 5 && !strcmp(argv[1], "-a") && (string(argv[3]).find(".") == string::npos)) {
         command_3(argc, argv);
     }
