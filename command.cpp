@@ -634,6 +634,38 @@ void command_5(int argc, char* argv[]){
         counting_sort_comp(data1_comp, n, cmp_sort_1);
         counting_sort_time(data1_time, n, time_sort_1);
     }
+    else if (!strcmp(sort_algorithms_1,"radix-sort")){
+        radix_sort_comp(data1_comp, n , count_quick_comp_1);
+        radix_sort_time(data1_time, n , time_sort_1);
+    }
+    else if (!strcmp(sort_algorithms_1,"shaker-sort")){
+        shaker_sort_comp(data1_comp, n, cmp_sort_1);
+        shaker_sort_time(data1_time, n, time_sort_1);
+    }
+    else if (!strcmp(sort_algorithms_1,"shell-sort")){
+        shell_sort_comp(data1_comp, n, cmp_sort_1);
+        shell_sort_time(data1_time, n, time_sort_1);
+    }
+    else if (!strcmp(sort_algorithms_1,"merge-sort")){
+        merge_sort_comp(data1_comp, n , count_quick_comp_1);
+        merge_sort_time(data1_time, n , time_sort_1);
+    }
+    else if (!strcmp(sort_algorithms_1,"insertion-sort")){
+        insertion_sort_comp(data1_comp, n, cmp_sort_1);
+        insertion_sort_time(data1_time, n, time_sort_1);
+    }
+    else if (!strcmp(sort_algorithms_1,"flash-sort")){
+        flash_sort_comp(data1_comp, n, cmp_sort_1);
+        flash_sort_time(data1_time, n, time_sort_1);
+    }
+    else if (!strcmp(sort_algorithms_1,"bubble-sort")){
+        bubble_sort_comp(data1_comp, n , count_quick_comp_1);
+        bubble_sort_time(data1_time, n , time_sort_1);
+    }
+    else if (!strcmp(sort_algorithms_1,"heap-sort")){
+        selection_sort_comp(data1_comp, n, cmp_sort_1);
+        selection_sort_time(data1_time, n, time_sort_1);
+    }
     else {
         cout <<"No sort 1 found" << endl;
         return;
