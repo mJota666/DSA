@@ -15,7 +15,6 @@
 void write_input_file (int a[] ,int n)
 {
     ofstream output("input.txt");
-    GenerateRandomData(a, n);
     output << n << endl;
     for (int i = 0; i < n; i++)
     {
