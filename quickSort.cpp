@@ -36,7 +36,7 @@ void quick_sort(int arr[], int low, int high) {
     StackElement* stack = new StackElement[high - low + 1];
     int top = -1;
 
-    stack[++top] = { low, high };
+    stack[++top] = { (low, high) };
 
     while (top >= 0) {
         high = stack[top].end;
