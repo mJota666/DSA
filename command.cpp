@@ -353,12 +353,20 @@ void command_3(int argc, char *argv[])
     cout << "Algorithm: " << algorithm_sort << endl;
     cout << "Input size: " << input_size << endl;
 
-    string input_order[] = {"Randomize",  "Reversed", "Sorted","Nearly Sorted"};
+    string input_order[] = {"Randomize", "Sorted", "Nearly Sorted", "Reversed"};
     for (int i = 0; i < 4; i++)
     {
         int *a = new int[input_size];
         int *a1 = new int[input_size];
-        GenerateData(a, input_size, i);
+        int type_generator = 0;
+        if (i == 1) {
+            type_generator = 1;
+        } else if (i == 2) {
+            type_generator = 3;
+        } else if (i == 3) {
+            type_generator = 2;
+        }
+        GenerateData(a, input_size, type_generator);
         cout << "\nInput order: " << input_order[i] << endl;
         cout << "-------------------------\n";
         memcpy( a1, a , sizeof(int )*input_size );
