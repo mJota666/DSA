@@ -818,7 +818,6 @@ void command_1(int argc, char *argv[])
 
 void command_4(int argc,  char* argv[]) {
 
-
     string algorithm1;
     string algorithm2;
     string input_file;
@@ -844,15 +843,15 @@ void command_4(int argc,  char* argv[]) {
         }
     }
 
-    ifstream input(input_file);
+    ifstream input("input.txt");
     int n = 0;
     //a - comparision     b - time
     //1 - algo1           2 - algo2
+    input >> n;
     int* a1 = new int[n];
     int* b1 = new int[n];
     int* a2 = new int[n];
     int* b2 = new int[n];
-    input >> n;
     for (int i = 0; i < n; i++) {
         input >> a1[i];
     }
@@ -1481,10 +1480,9 @@ void command_4(int argc,  char* argv[]) {
 
     //output
     cout << "Running time: " << time1 << " | " << time2 << endl;
-    cout << "Comparisions: " << count_comp1 << " | " << count_comp2 << endl;
+    cout << "Comparisions: " << fixed << setprecision(5) << count_comp1 << " | " << count_comp2 << endl;
     delete[]a1;
     delete[]b1;
     delete[]a2;
     delete[]b2;
 }
-
