@@ -36,8 +36,12 @@ void quick_sort(int arr[], int low, int high) {
     StackElement* stack = new StackElement[high - low + 1];
     int top = -1;
 
+<<<<<<< HEAD
     stack[++top].start = low;
     stack[top].end = high;
+=======
+    stack[++top] = { (low, high) };
+>>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
 
     while (top >= 0) {
         high = stack[top].end;
@@ -47,17 +51,28 @@ void quick_sort(int arr[], int low, int high) {
             int pivotIndex = partition(arr, low, high);
 
             if (pivotIndex - low < high - pivotIndex) {
+<<<<<<< HEAD
                 stack[++top].start = pivotIndex + 1;
                 stack[top].end = high;
                 high = pivotIndex - 1;
             } else {
                 stack[++top].start = low;
                 stack[top].end = pivotIndex - 1;
+=======
+                stack[++top] = { pivotIndex + 1, high };
+                high = pivotIndex - 1;
+            } else {
+                stack[++top] = { low, pivotIndex - 1 };
+>>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
                 low = pivotIndex + 1;
             }
         }
     }
+<<<<<<< HEAD
     delete[] stack;
+=======
+    delete[] stack; 
+>>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
 }
 
 void quick_sort_time(int arr[], int n, long double &time)
@@ -101,8 +116,12 @@ void quick_sort_comp_run(int arr[], int low, int high, long long &count_comp) {
     StackElement* stack = new StackElement[high - low + 1];
     int top = -1;
 
+<<<<<<< HEAD
     stack[++top].start = low;
     stack[top].end = high;
+=======
+    stack[++top] = { low, high };
+>>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
 
     while (++count_comp && top >= 0) {
         high = stack[top].end;
@@ -112,20 +131,42 @@ void quick_sort_comp_run(int arr[], int low, int high, long long &count_comp) {
             int pivotIndex = partition_comp(arr, low, high, count_comp);
 
             if (++count_comp && (pivotIndex - low < high - pivotIndex)) {
+<<<<<<< HEAD
                 stack[++top].start = pivotIndex + 1;
                 stack[top].end = high;
                 high = pivotIndex - 1;
             } else {
                 stack[++top].start = low;
                 stack[top].end = pivotIndex - 1;
+=======
+                stack[++top] = { pivotIndex + 1, high };
+                high = pivotIndex - 1;
+            } else {
+                stack[++top] = { low, pivotIndex - 1 };
+>>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
                 low = pivotIndex + 1;
             }
         }
     }
+<<<<<<< HEAD
     delete[] stack;
+=======
+    delete[] stack; 
+>>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
 }
 
 void quick_sort_comp(int arr[], int n, long long &count_comp)
 {
     quick_sort_comp_run(arr, 0, n - 1, count_comp);
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+>>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
