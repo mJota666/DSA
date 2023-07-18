@@ -92,7 +92,7 @@ void command_2(int argc, char *argv[])
         {
 
             selection_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -104,7 +104,7 @@ void command_2(int argc, char *argv[])
         {
             selection_sort_comp(a, input_size, count_comp);
             selection_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -115,7 +115,7 @@ void command_2(int argc, char *argv[])
         {
 
             bubble_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -127,7 +127,7 @@ void command_2(int argc, char *argv[])
         {
             bubble_sort_comp(a, input_size, count_comp);
             bubble_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -138,7 +138,7 @@ void command_2(int argc, char *argv[])
         {
 
             radix_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -150,7 +150,7 @@ void command_2(int argc, char *argv[])
         {
             radix_sort_comp(a, input_size, count_comp);
             radix_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -159,7 +159,7 @@ void command_2(int argc, char *argv[])
         if (output == "-time")
         {
             heap_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -171,7 +171,7 @@ void command_2(int argc, char *argv[])
         {
             heap_sort_comp(a, input_size, count_comp);
             heap_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -180,7 +180,7 @@ void command_2(int argc, char *argv[])
         if (output == "-time")
         {
             flash_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -192,7 +192,7 @@ void command_2(int argc, char *argv[])
         {
             flash_sort_comp(a, input_size, count_comp);
             flash_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -201,7 +201,7 @@ void command_2(int argc, char *argv[])
         if (output == "-time")
         {
             shaker_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -213,7 +213,7 @@ void command_2(int argc, char *argv[])
         {
             shaker_sort_comp(a, input_size, count_comp);
             shaker_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -222,7 +222,7 @@ void command_2(int argc, char *argv[])
         if (output == "-time")
         {
             counting_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -234,7 +234,7 @@ void command_2(int argc, char *argv[])
         {
             counting_sort_comp(a, input_size, count_comp);
             counting_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -244,7 +244,7 @@ void command_2(int argc, char *argv[])
         if (output == "-time")
         {
             quick_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -255,7 +255,7 @@ void command_2(int argc, char *argv[])
         {
             quick_sort_comp(a, input_size, count_comp);
             quick_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -264,7 +264,7 @@ void command_2(int argc, char *argv[])
         if (output == "-time")
         {
             shell_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -276,7 +276,7 @@ void command_2(int argc, char *argv[])
         {
             shell_sort_comp(a, input_size, count_comp);
             shell_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -285,7 +285,7 @@ void command_2(int argc, char *argv[])
         if (output == "-time")
         {
             merge_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -297,7 +297,7 @@ void command_2(int argc, char *argv[])
         {
             merge_sort_comp(a, input_size, count_comp);
             merge_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -306,7 +306,7 @@ void command_2(int argc, char *argv[])
         if (output == "-time")
         {
             insertion_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -318,7 +318,7 @@ void command_2(int argc, char *argv[])
         {
             insertion_sort_comp(a, input_size, count_comp);
             insertion_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -353,15 +353,28 @@ void command_3(int argc, char *argv[])
     cout << "Algorithm: " << algorithm_sort << endl;
     cout << "Input size: " << input_size << endl;
 
-    string input_order[] = {"Randomize",  "Reversed", "Sorted","Nearly Sorted"};
+    string input_order[] = {"Randomize", "Sorted", "Nearly Sorted", "Reversed"};
     for (int i = 0; i < 4; i++)
     {
         int *a = new int[input_size];
         int *a1 = new int[input_size];
-        GenerateData(a, input_size, i);
+        int type_generator = 0;
+        if (i == 1)
+        {
+            type_generator = 1;
+        }
+        else if (i == 2)
+        {
+            type_generator = 3;
+        }
+        else if (i == 3)
+        {
+            type_generator = 2;
+        }
+        GenerateData(a, input_size, type_generator);
         cout << "\nInput order: " << input_order[i] << endl;
         cout << "-------------------------\n";
-        memcpy( a1, a , sizeof(int )*input_size );
+        memcpy(a1, a, sizeof(int) * input_size);
         if (algorithm_sort.find("merge") != string::npos)
         {
             long long count_comp = 0;
@@ -582,132 +595,202 @@ void command_3(int argc, char *argv[])
                 cout << "Comparisions: " << count_comp << endl;
             }
         }
-      
+
         delete[] a;
         a = nullptr;
         delete[] a1;
         a1 = nullptr;
     }
 }
-
-void command_5(int argc, char* argv[]){
+void command_5(int argc, char *argv[])
+{
     int n = stoi(argv[4]);
     int *data = new int[n];
     int *data1_comp = new int[n];
     int *data1_time = new int[n];
     int *data2_comp = new int[n];
     int *data2_time = new int[n];
-    char *sort_algorithms_1 = new char[20], *sort_algorithms_2 =  new char[20];
-    long long cmp_sort_1 = 0 , cmp_sort_2 = 0 ;
+    char *sort_algorithms_1 = new char[20], *sort_algorithms_2 = new char[20];
+    long long cmp_sort_1 = 0, cmp_sort_2 = 0;
     long long count_quick_comp_1 = 0;
     long long count_quick_comp_2 = 0;
-    long double time_sort_1 = 0, time_sort_2 = 0 ;
-    strcpy(sort_algorithms_1,argv[2]);
-    strcpy(sort_algorithms_2,argv[3]);
-    if (!strcmp(argv[5],"-rand")) {
+    long double time_sort_1 = 0, time_sort_2 = 0;
+    strcpy(sort_algorithms_1, argv[2]);
+    strcpy(sort_algorithms_2, argv[3]);
+    if (!strcmp(argv[5], "-rand"))
+    {
         GenerateRandomData(data, n);
     }
-    else if (!strcmp(argv[5],"-nsorted")){
+    else if (!strcmp(argv[5], "-nsorted"))
+    {
         GenerateNearlySortedData(data, n);
     }
-    else if (!strcmp(argv[5],"-sorted")){
+    else if (!strcmp(argv[5], "-sorted"))
+    {
         GenerateSortedData(data, n);
     }
-    else if(!strcmp(argv[5],"-rev")){
+    else if (!strcmp(argv[5], "-rev"))
+    {
         GenerateReverseData(data, n);
     }
-    else{
-        cout << "No array have init"  << endl;
+    else
+    {
+        cout << "No array have init" << endl;
         return;
     }
-    memcpy(data1_comp, data, n*4);
-    memcpy(data1_time, data, n*4);
-    if (!strcmp(sort_algorithms_1,"quick-sort")){
-        quick_sort_comp(data1_comp, n , count_quick_comp_1);
-        quick_sort_time(data1_time, n , time_sort_1);
+    memcpy(data1_comp, data, n * 4);
+    memcpy(data1_time, data, n * 4);
+    if (!strcmp(sort_algorithms_1, "quick-sort"))
+    {
+        quick_sort_comp(data1_comp, n, count_quick_comp_1);
+        quick_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"selection-sort")){
+    else if (!strcmp(sort_algorithms_1, "selection-sort"))
+    {
         selection_sort_comp(data1_comp, n, cmp_sort_1);
         selection_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"counting-sort")){
+    else if (!strcmp(sort_algorithms_1, "counting-sort"))
+    {
         counting_sort_comp(data1_comp, n, cmp_sort_1);
         counting_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"radix-sort")){
-        radix_sort_comp(data1_comp, n , count_quick_comp_1);
-        radix_sort_time(data1_time, n , time_sort_1);
+    else if (!strcmp(sort_algorithms_1, "radix-sort"))
+    {
+        radix_sort_comp(data1_comp, n, count_quick_comp_1);
+        radix_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"shaker-sort")){
+    else if (!strcmp(sort_algorithms_1, "shaker-sort"))
+    {
         shaker_sort_comp(data1_comp, n, cmp_sort_1);
         shaker_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"shell-sort")){
+    else if (!strcmp(sort_algorithms_1, "shell-sort"))
+    {
         shell_sort_comp(data1_comp, n, cmp_sort_1);
         shell_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"merge-sort")){
-        merge_sort_comp(data1_comp, n , count_quick_comp_1);
-        merge_sort_time(data1_time, n , time_sort_1);
+    else if (!strcmp(sort_algorithms_1, "merge-sort"))
+    {
+        merge_sort_comp(data1_comp, n, cmp_sort_1);
+        merge_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"insertion-sort")){
+    else if (!strcmp(sort_algorithms_1, "insertion-sort"))
+    {
         insertion_sort_comp(data1_comp, n, cmp_sort_1);
         insertion_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"flash-sort")){
+    else if (!strcmp(sort_algorithms_1, "flash-sort"))
+    {
         flash_sort_comp(data1_comp, n, cmp_sort_1);
         flash_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"bubble-sort")){
-        bubble_sort_comp(data1_comp, n , count_quick_comp_1);
-        bubble_sort_time(data1_time, n , time_sort_1);
+    else if (!strcmp(sort_algorithms_1, "bubble-sort"))
+    {
+        bubble_sort_comp(data1_comp, n, cmp_sort_1);
+        bubble_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"heap-sort")){
+    else if (!strcmp(sort_algorithms_1, "heap-sort"))
+    {
         selection_sort_comp(data1_comp, n, cmp_sort_1);
         selection_sort_time(data1_time, n, time_sort_1);
     }
-    else {
-        cout <<"No sort 1 found" << endl;
+    else
+    {
+        cout << "No sort 1 found" << endl;
         return;
     }
-    delete [] data1_comp;
-    delete [] data1_time;
-    memcpy(data2_comp, data, n*4);
-    memcpy(data2_time, data, n*4);
-     if (!strcmp(sort_algorithms_2,"quick-sort")){
-        quick_sort_comp(data2_comp, n , count_quick_comp_2);
-        quick_sort_time(data2_time, n , time_sort_2);
+    delete[] data1_comp;
+    delete[] data1_time;
+    memcpy(data2_comp, data, n * 4);
+    memcpy(data2_time, data, n * 4);
+        if (!strcmp(sort_algorithms_2, "quick-sort"))
+    {
+        quick_sort_comp(data2_comp, n, count_quick_comp_2);
+        quick_sort_time(data2_time, n, time_sort_2);
     }
-    else if (!strcmp(sort_algorithms_2,"selection-sort")){
+    else if (!strcmp(sort_algorithms_2, "selection-sort"))
+    {
         selection_sort_comp(data2_comp, n, cmp_sort_2);
         selection_sort_time(data2_time, n, time_sort_2);
     }
-    else if (!strcmp(sort_algorithms_2,"counting-sort")){
+    else if (!strcmp(sort_algorithms_2, "counting-sort"))
+    {
         counting_sort_comp(data2_comp, n, cmp_sort_2);
         counting_sort_time(data2_time, n, time_sort_2);
     }
-    else {
-        cout <<"No sort 2 found" << endl;
+    else if (!strcmp(sort_algorithms_2, "radix-sort"))
+    {
+        radix_sort_comp(data2_comp, n, cmp_sort_2);
+        radix_sort_time(data2_time, n, time_sort_2);
+    }
+    else if (!strcmp(sort_algorithms_2, "shaker-sort"))
+    {
+        shaker_sort_comp(data2_comp, n, cmp_sort_2);
+        shaker_sort_time(data2_time, n, time_sort_2);
+    }
+    else if (!strcmp(sort_algorithms_2, "shell-sort"))
+    {
+        shell_sort_comp(data2_comp, n, cmp_sort_2);
+        shell_sort_time(data2_time, n, time_sort_2);
+    }
+    else if (!strcmp(sort_algorithms_2, "merge-sort"))
+    {
+        merge_sort_comp(data2_comp, n, cmp_sort_2);
+        merge_sort_time(data2_time, n, time_sort_2);
+    }
+    else if (!strcmp(sort_algorithms_2, "insertion-sort"))
+    {
+        insertion_sort_comp(data2_comp, n, cmp_sort_2);
+        insertion_sort_time(data2_time, n, time_sort_2);
+    }
+    else if (!strcmp(sort_algorithms_2, "flash-sort"))
+    {
+        flash_sort_comp(data2_comp, n, cmp_sort_2);
+        flash_sort_time(data2_time, n, time_sort_2);
+    }
+    else if (!strcmp(sort_algorithms_2, "bubble-sort"))
+    {
+        bubble_sort_comp(data2_comp, n, cmp_sort_2);
+        bubble_sort_time(data2_time, n, time_sort_2);
+    }
+    else if (!strcmp(sort_algorithms_2, "heap-sort"))
+    {
+        selection_sort_comp(data2_comp, n, cmp_sort_2);
+        selection_sort_time(data2_time, n, time_sort_2);
+    }
+    else
+    {
+        cout << "No sort 2 found" << endl;
         return;
     }
     cout << "Algorithms: " << sort_algorithms_1 << " | " << sort_algorithms_2 << endl;
     cout << "Input size: " << n << endl;
     cout << "Input order: " << argv[5] << endl;
     cout << "---------------------------" << endl;
-    cout << "Running time: " << setprecision(5)<< fixed << time_sort_1 << " | "<<setprecision(5)<< fixed << time_sort_2  << endl;
-    if (!strcmp(sort_algorithms_2,"quick-sort")){
+    cout << "Running time: " << setprecision(5) << fixed << time_sort_1 << " | " << setprecision(5) << fixed << time_sort_2 << endl;
+    if (!strcmp(sort_algorithms_1, "quick-sort") &&!strcmp(sort_algorithms_2, "quick-sort") ){
         cout << "Comparsions : " << count_quick_comp_1 << " | " << count_quick_comp_2 << endl;
     }
-    else {
+    else if (!strcmp(sort_algorithms_2, "quick-sort"))
+    {
+        cout << "Comparsions : " << cmp_sort_1 << " | " << count_quick_comp_2 << endl;
+    }
+    else if ( !strcmp(sort_algorithms_1, "quick-sort")){
+         cout << "Comparsions : " << count_quick_comp_1 << " | " << cmp_sort_2 << endl;
+    }
+    else
+    {
         cout << "Comparsions : " << cmp_sort_1 << " | " << cmp_sort_2 << endl;
     }
     cout << endl;
-    delete [] data;
-    delete [] data2_comp;
-    delete [] data2_time;
-    delete []sort_algorithms_1;
-    delete []sort_algorithms_2;
+    delete[] data;
+    delete[] data2_comp;
+    delete[] data2_time;
+    delete[] sort_algorithms_1;
+    delete[] sort_algorithms_2;
 }
+
 
 
 void output_file(int n)
@@ -769,7 +852,7 @@ void command_1(int argc, char *argv[])
         if (output == "-time")
         {
             selection_sort_time(a, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
         }
         else if (output == "-comp")
         {
@@ -780,7 +863,7 @@ void command_1(int argc, char *argv[])
         {
             selection_sort_comp(a, input_size, count_comp);
             selection_sort_time(b, input_size, time);
-            cout << "Running time: " << time << endl;
+            cout << "Running time: " <<fixed<< setprecision(7)<<time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
     }
@@ -1672,3 +1755,89 @@ void command_4(int argc,  char* argv[]) {
     delete[]a2;
     delete[]b2;
 }
+
+//string formatDecimal(long double number) {
+//    // Chuyển đổi số thành chuỗi
+//    std::stringstream ss;
+//    ss << fixed<<setprecision(10)<<number;
+//    std::string str = ss.str();
+//
+//    // Tìm vị trí của dấu chấm
+//    std::size_t dotPos = str.find('.');
+//    if (dotPos != std::string::npos) {
+//        // Thay thế dấu chấm thành dấu phẩy
+//        str[dotPos] = ',';
+//    }
+//
+//    return str;
+//}
+//void cmd_spec (int n, string order)
+//{
+//
+//    for (int  i = 0 ; i < 11 ; i++)
+//    {
+//
+//        int *a = new int [n];
+//        int input_size = n;
+//
+//        if (order == "-rand")
+//        {
+//            GenerateData(a, n, 0);
+//        }
+//        else if (order == "-nsorted")
+//        {
+//            GenerateData(a, n, 3);
+//        }
+//        else if (order == "-sorted")
+//        {
+//            GenerateData(a, n, 1);
+//        }
+//        else if (order == "-rev")
+//        {
+//            GenerateData(a, n, 2);
+//        }
+//        int *b = new int[input_size];
+//        memcpy(b, a, input_size * sizeof(int));
+//        string output = "-both";
+//        string algorithm ="";
+//
+//        if (i == 5 )
+//        {
+//            algorithm = "quick";
+//
+//        }
+//
+//        else if (i == 8 )
+//        {
+//            algorithm = "counting";
+//
+//        }
+//        long long count_comp = 0;
+//        long double time  = 0;
+//
+//         if (algorithm == "quick")
+//        {
+//
+//            if (output == "-time")
+//            {
+//                quick_sort_time(a, input_size, time);
+//            }
+//            else if (output == "-comp")
+//            {
+//                quick_sort_comp(a, input_size, count_comp);
+//
+//            }
+//            else if (output == "-both")
+//            {
+//                quick_sort_comp(a, input_size, count_comp);
+//                quick_sort_time(b, input_size, time);
+//
+//            }
+//            cout<<algorithm<<endl;
+//            cout<<formatDecimal(time)<<" ";
+//            cout<<count_comp<<endl;
+//        }
+//
+//    }
+//
+//}

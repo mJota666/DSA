@@ -17,3 +17,4 @@ void command_3(int argc, char *argv[]);
 void command_4(int argc, char* argv[]);
 void command_5(int argc, char* argv[]);
 void output_file(int n);
+void cmd_spec(int n, string order);
