@@ -9,7 +9,6 @@ void printArray(int a[], int n)
     cout << endl;
 }
 
-
 int main(int argc, char* argv[])
 {
     string mode = (string)argv[1];
