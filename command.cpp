@@ -12,7 +12,7 @@
 #include "shakerSort.h"
 #include "mergeSort.h"
 #include "quickSort.h"
-void write_input_file (int a[] ,int n)
+void write_input_file(int a[], int n)
 {
     ofstream output("input.txt");
     output << n << endl;
@@ -22,7 +22,7 @@ void write_input_file (int a[] ,int n)
     }
     output.close();
 }
-void write_output_file (int a[] ,int n)
+void write_output_file(int a[], int n)
 {
     ofstream output("output.txt");
     for (int i = 0; i < n; i++)
@@ -75,7 +75,7 @@ void command_2(int argc, char *argv[])
     {
         GenerateData(a, input_size, 2);
     }
-    write_input_file(a , input_size);
+    write_input_file(a, input_size);
     int *b = new int[input_size];
     memcpy(b, a, input_size * sizeof(int));
     long long count_comp = 0;
@@ -87,7 +87,7 @@ void command_2(int argc, char *argv[])
     cout << "-----------------------------------" << endl;
     if (algorithm == "selection")
     {
-        
+
         if (output == "-time")
         {
 
@@ -240,7 +240,7 @@ void command_2(int argc, char *argv[])
     }
     else if (algorithm == "quick")
     {
-        
+
         if (output == "-time")
         {
             quick_sort_time(a, input_size, time);
@@ -322,7 +322,7 @@ void command_2(int argc, char *argv[])
             cout << "Comparisions: " << count_comp << endl;
         }
     }
-    write_output_file (a, input_size);
+    write_output_file(a, input_size);
     // clear mem
     delete[] a;
     delete[] b;
@@ -359,17 +359,22 @@ void command_3(int argc, char *argv[])
         int *a = new int[input_size];
         int *a1 = new int[input_size];
         int type_data = 0;
-        if (i == 1) {
+        if (i == 1)
+        {
             type_data = 1;
-        } else if (i == 2) {
+        }
+        else if (i == 2)
+        {
             type_data = 3;
-        } else if (i == 3) {
+        }
+        else if (i == 3)
+        {
             type_data = 2;
         }
         GenerateData(a, input_size, type_data);
         cout << "\nInput order: " << input_order[i] << endl;
         cout << "-------------------------\n";
-        memcpy( a1, a, sizeof(int) * input_size);
+        memcpy(a1, a, sizeof(int) * input_size);
         if (algorithm_sort.find("merge") != string::npos)
         {
             long long count_comp = 0;
@@ -590,7 +595,7 @@ void command_3(int argc, char *argv[])
                 cout << "Comparisions: " << count_comp << endl;
             }
         }
-      
+
         delete[] a;
         a = nullptr;
         delete[] a1;
@@ -598,125 +603,148 @@ void command_3(int argc, char *argv[])
     }
 }
 
-void command_5(int argc, char* argv[]){
+void command_5(int argc, char *argv[])
+{
     int n = stoi(argv[4]);
     int *data = new int[n];
     int *data1_comp = new int[n];
     int *data1_time = new int[n];
     int *data2_comp = new int[n];
     int *data2_time = new int[n];
-    char *sort_algorithms_1 = new char[20], *sort_algorithms_2 =  new char[20];
-    long long cmp_sort_1 = 0 , cmp_sort_2 = 0 ;
+    char *sort_algorithms_1 = new char[20], *sort_algorithms_2 = new char[20];
+    long long cmp_sort_1 = 0, cmp_sort_2 = 0;
     long long count_quick_comp_1 = 0;
     long long count_quick_comp_2 = 0;
-    long double time_sort_1 = 0, time_sort_2 = 0 ;
-    strcpy(sort_algorithms_1,argv[2]);
-    strcpy(sort_algorithms_2,argv[3]);
-    if (!strcmp(argv[5],"-rand")) {
+    long double time_sort_1 = 0, time_sort_2 = 0;
+    strcpy(sort_algorithms_1, argv[2]);
+    strcpy(sort_algorithms_2, argv[3]);
+    if (!strcmp(argv[5], "-rand"))
+    {
         GenerateRandomData(data, n);
     }
-    else if (!strcmp(argv[5],"-nsorted")){
+    else if (!strcmp(argv[5], "-nsorted"))
+    {
         GenerateNearlySortedData(data, n);
     }
-    else if (!strcmp(argv[5],"-sorted")){
+    else if (!strcmp(argv[5], "-sorted"))
+    {
         GenerateSortedData(data, n);
     }
-    else if(!strcmp(argv[5],"-rev")){
+    else if (!strcmp(argv[5], "-rev"))
+    {
         GenerateReverseData(data, n);
     }
-    else{
-        cout << "No array have init"  << endl;
+    else
+    {
+        cout << "No array have init" << endl;
         return;
     }
-    memcpy(data1_comp, data, n*4);
-    memcpy(data1_time, data, n*4);
-    if (!strcmp(sort_algorithms_1,"quick-sort")){
-        quick_sort_comp(data1_comp, n , count_quick_comp_1);
-        quick_sort_time(data1_time, n , time_sort_1);
+    memcpy(data1_comp, data, n * 4);
+    memcpy(data1_time, data, n * 4);
+    if (!strcmp(sort_algorithms_1, "quick-sort"))
+    {
+        quick_sort_comp(data1_comp, n, count_quick_comp_1);
+        quick_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"selection-sort")){
+    else if (!strcmp(sort_algorithms_1, "selection-sort"))
+    {
         selection_sort_comp(data1_comp, n, cmp_sort_1);
         selection_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"counting-sort")){
+    else if (!strcmp(sort_algorithms_1, "counting-sort"))
+    {
         counting_sort_comp(data1_comp, n, cmp_sort_1);
         counting_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"radix-sort")){
-        radix_sort_comp(data1_comp, n , count_quick_comp_1);
-        radix_sort_time(data1_time, n , time_sort_1);
+    else if (!strcmp(sort_algorithms_1, "radix-sort"))
+    {
+        radix_sort_comp(data1_comp, n, count_quick_comp_1);
+        radix_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"shaker-sort")){
+    else if (!strcmp(sort_algorithms_1, "shaker-sort"))
+    {
         shaker_sort_comp(data1_comp, n, cmp_sort_1);
         shaker_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"shell-sort")){
+    else if (!strcmp(sort_algorithms_1, "shell-sort"))
+    {
         shell_sort_comp(data1_comp, n, cmp_sort_1);
         shell_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"merge-sort")){
-        merge_sort_comp(data1_comp, n , count_quick_comp_1);
-        merge_sort_time(data1_time, n , time_sort_1);
+    else if (!strcmp(sort_algorithms_1, "merge-sort"))
+    {
+        merge_sort_comp(data1_comp, n, count_quick_comp_1);
+        merge_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"insertion-sort")){
+    else if (!strcmp(sort_algorithms_1, "insertion-sort"))
+    {
         insertion_sort_comp(data1_comp, n, cmp_sort_1);
         insertion_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"flash-sort")){
+    else if (!strcmp(sort_algorithms_1, "flash-sort"))
+    {
         flash_sort_comp(data1_comp, n, cmp_sort_1);
         flash_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"bubble-sort")){
-        bubble_sort_comp(data1_comp, n , count_quick_comp_1);
-        bubble_sort_time(data1_time, n , time_sort_1);
+    else if (!strcmp(sort_algorithms_1, "bubble-sort"))
+    {
+        bubble_sort_comp(data1_comp, n, count_quick_comp_1);
+        bubble_sort_time(data1_time, n, time_sort_1);
     }
-    else if (!strcmp(sort_algorithms_1,"heap-sort")){
+    else if (!strcmp(sort_algorithms_1, "heap-sort"))
+    {
         selection_sort_comp(data1_comp, n, cmp_sort_1);
         selection_sort_time(data1_time, n, time_sort_1);
     }
-    else {
-        cout <<"No sort 1 found" << endl;
+    else
+    {
+        cout << "No sort 1 found" << endl;
         return;
     }
-    delete [] data1_comp;
-    delete [] data1_time;
-    memcpy(data2_comp, data, n*4);
-    memcpy(data2_time, data, n*4);
-     if (!strcmp(sort_algorithms_2,"quick-sort")){
-        quick_sort_comp(data2_comp, n , count_quick_comp_2);
-        quick_sort_time(data2_time, n , time_sort_2);
+    delete[] data1_comp;
+    delete[] data1_time;
+    memcpy(data2_comp, data, n * 4);
+    memcpy(data2_time, data, n * 4);
+    if (!strcmp(sort_algorithms_2, "quick-sort"))
+    {
+        quick_sort_comp(data2_comp, n, count_quick_comp_2);
+        quick_sort_time(data2_time, n, time_sort_2);
     }
-    else if (!strcmp(sort_algorithms_2,"selection-sort")){
+    else if (!strcmp(sort_algorithms_2, "selection-sort"))
+    {
         selection_sort_comp(data2_comp, n, cmp_sort_2);
         selection_sort_time(data2_time, n, time_sort_2);
     }
-    else if (!strcmp(sort_algorithms_2,"counting-sort")){
+    else if (!strcmp(sort_algorithms_2, "counting-sort"))
+    {
         counting_sort_comp(data2_comp, n, cmp_sort_2);
         counting_sort_time(data2_time, n, time_sort_2);
     }
-    else {
-        cout <<"No sort 2 found" << endl;
+    else
+    {
+        cout << "No sort 2 found" << endl;
         return;
     }
     cout << "Algorithms: " << sort_algorithms_1 << " | " << sort_algorithms_2 << endl;
     cout << "Input size: " << n << endl;
     cout << "Input order: " << argv[5] << endl;
     cout << "---------------------------" << endl;
-    cout << "Running time: " << setprecision(5)<< fixed << time_sort_1 << " | "<<setprecision(5)<< fixed << time_sort_2  << endl;
-    if (!strcmp(sort_algorithms_2,"quick-sort")){
+    cout << "Running time: " << setprecision(5) << fixed << time_sort_1 << " | " << setprecision(5) << fixed << time_sort_2 << endl;
+    if (!strcmp(sort_algorithms_2, "quick-sort"))
+    {
         cout << "Comparsions : " << count_quick_comp_1 << " | " << count_quick_comp_2 << endl;
     }
-    else {
+    else
+    {
         cout << "Comparsions : " << cmp_sort_1 << " | " << cmp_sort_2 << endl;
     }
     cout << endl;
-    delete [] data;
-    delete [] data2_comp;
-    delete [] data2_time;
-    delete []sort_algorithms_1;
-    delete []sort_algorithms_2;
+    delete[] data;
+    delete[] data2_comp;
+    delete[] data2_time;
+    delete[] sort_algorithms_1;
+    delete[] sort_algorithms_2;
 }
-
 
 void output_file(int n)
 {
@@ -961,18 +989,18 @@ void command_1(int argc, char *argv[])
     {
         if (output == "-time")
         {
-             merge_sort_time(a, input_size, time);
+            merge_sort_time(a, input_size, time);
             cout << "Running time: " << time << endl;
         }
         else if (output == "-comp")
         {
-               merge_sort_comp(a, input_size, count_comp);
+            merge_sort_comp(a, input_size, count_comp);
             cout << "Comparisions: " << count_comp << endl;
         }
         else if (output == "-both")
         {
-             merge_sort_comp(a, input_size, count_comp);
-             merge_sort_time(b, input_size, time);
+            merge_sort_comp(a, input_size, count_comp);
+            merge_sort_time(b, input_size, time);
             cout << "Running time: " << time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
@@ -981,18 +1009,18 @@ void command_1(int argc, char *argv[])
     {
         if (output == "-time")
         {
-              merge_sort_time(a, input_size, time);
+            merge_sort_time(a, input_size, time);
             cout << "Running time: " << time << endl;
         }
         else if (output == "-comp")
         {
-              merge_sort_comp(a, input_size, count_comp);
+            merge_sort_comp(a, input_size, count_comp);
             cout << "Comparisions: " << count_comp << endl;
         }
         else if (output == "-both")
         {
-             merge_sort_comp(a, input_size, count_comp);
-             merge_sort_time(b, input_size, time);
+            merge_sort_comp(a, input_size, count_comp);
+            merge_sort_time(b, input_size, time);
             cout << "Running time: " << time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
@@ -1010,13 +1038,15 @@ void command_1(int argc, char *argv[])
     delete[] a;
     delete[] b;
 }
-void command_4(int argc,  char* argv[]) {
+void command_4(int argc, char *argv[])
+{
 
     string algorithm1;
     string algorithm2;
     string input_file;
 
-    if (argc >= 5) {
+    if (argc >= 5)
+    {
         algorithm1 = argv[2];
         algorithm2 = argv[3];
         input_file = argv[4];
@@ -1039,14 +1069,15 @@ void command_4(int argc,  char* argv[]) {
 
     ifstream input("input.txt");
     int n = 0;
-    //a - comparision     b - time
-    //1 - algo1           2 - algo2
+    // a - comparision     b - time
+    // 1 - algo1           2 - algo2
     input >> n;
-    int* a1 = new int[n];
-    int* b1 = new int[n];
-    int* a2 = new int[n];
-    int* b2 = new int[n];
-    for (int i = 0; i < n; i++) {
+    int *a1 = new int[n];
+    int *b1 = new int[n];
+    int *a2 = new int[n];
+    int *b2 = new int[n];
+    for (int i = 0; i < n; i++)
+    {
         input >> a1[i];
     }
     memcpy(b1, a1, n * sizeof(int));
@@ -1061,7 +1092,7 @@ void command_4(int argc,  char* argv[]) {
     long double time2 = 0;
 
     cout << "COMPARE MODE" << endl;
-    cout << "Algorithm: " << algorithm1 << " sort | "<<algorithm2 <<" sort" << endl;
+    cout << "Algorithm: " << algorithm1 << " sort | " << algorithm2 << " sort" << endl;
     cout << "Input file: " << input_file << endl;
     cout << "Input size: " << input_size << endl;
     cout << "-----------------------------------" << endl;
@@ -1102,8 +1133,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "quick")
         {
-          //  quick_sort_comp(a2, input_size, count_comp2);
-           // quick_sort_time(b2, input_size, time2);
+            //  quick_sort_comp(a2, input_size, count_comp2);
+            // quick_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "shell")
         {
@@ -1112,8 +1143,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "merge")
         {
-          //  merge_sort_comp(a2, input_size, count_comp2);
-           // merge_sort_time(b2, input_size, time2);
+            //  merge_sort_comp(a2, input_size, count_comp2);
+            // merge_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "insertion")
         {
@@ -1157,8 +1188,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "quick")
         {
-            //quick_sort_comp(a2, input_size, count_comp2);
-            //quick_sort_time(b2, input_size, time2);
+            // quick_sort_comp(a2, input_size, count_comp2);
+            // quick_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "shell")
         {
@@ -1167,8 +1198,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "merge")
         {
-          //  merge_sort_comp(a2, input_size, count_comp2);
-           // merge_sort_time(b2, input_size, time2);
+            //  merge_sort_comp(a2, input_size, count_comp2);
+            // merge_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "insertion")
         {
@@ -1212,8 +1243,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "quick")
         {
-          //  quick_sort_comp(a2, input_size, count_comp2);
-          //  quick_sort_time(b2, input_size, time2);
+            //  quick_sort_comp(a2, input_size, count_comp2);
+            //  quick_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "shell")
         {
@@ -1222,8 +1253,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "merge")
         {
-         //   merge_sort_comp(a2, input_size, count_comp2);
-           // merge_sort_time(b2, input_size, time2);
+            //   merge_sort_comp(a2, input_size, count_comp2);
+            // merge_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "insertion")
         {
@@ -1267,8 +1298,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "quick")
         {
-        //    quick_sort_comp(a2, input_size, count_comp2);
-          //  quick_sort_time(b2, input_size, time2);
+            //    quick_sort_comp(a2, input_size, count_comp2);
+            //  quick_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "shell")
         {
@@ -1277,8 +1308,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "merge")
         {
-            //merge_sort_comp(a2, input_size, count_comp2);
-          //  merge_sort_time(b2, input_size, time2);
+            // merge_sort_comp(a2, input_size, count_comp2);
+            //  merge_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "insertion")
         {
@@ -1322,8 +1353,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "quick")
         {
-           // quick_sort_comp(a2, input_size, count_comp2);
-            //quick_sort_time(b2, input_size, time2);
+            // quick_sort_comp(a2, input_size, count_comp2);
+            // quick_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "shell")
         {
@@ -1332,8 +1363,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "merge")
         {
-         //   merge_sort_comp(a2, input_size, count_comp2);
-         //   merge_sort_time(b2, input_size, time2);
+            //   merge_sort_comp(a2, input_size, count_comp2);
+            //   merge_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "insertion")
         {
@@ -1377,8 +1408,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "quick")
         {
-       //     quick_sort_comp(a2, input_size, count_comp2);
-         //   quick_sort_time(b2, input_size, time2);
+            //     quick_sort_comp(a2, input_size, count_comp2);
+            //   quick_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "shell")
         {
@@ -1387,8 +1418,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "merge")
         {
-           // merge_sort_comp(a2, input_size, count_comp2);
-           // merge_sort_time(b2, input_size, time2);
+            // merge_sort_comp(a2, input_size, count_comp2);
+            // merge_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "insertion")
         {
@@ -1432,8 +1463,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "quick")
         {
-        //    quick_sort_comp(a2, input_size, count_comp2);
-          //  quick_sort_time(b2, input_size, time2);
+            //    quick_sort_comp(a2, input_size, count_comp2);
+            //  quick_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "shell")
         {
@@ -1442,8 +1473,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "merge")
         {
-         //   merge_sort_comp(a2, input_size, count_comp2);
-          //  merge_sort_time(b2, input_size, time2);
+            //   merge_sort_comp(a2, input_size, count_comp2);
+            //  merge_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "insertion")
         {
@@ -1453,8 +1484,8 @@ void command_4(int argc,  char* argv[]) {
     }
     else if (algorithm1 == "quick")
     {
-      //  quick_sort_comp(a1, input_size, count_comp1);
-        //quick_sort_time(b1, input_size, time1);
+        //  quick_sort_comp(a1, input_size, count_comp1);
+        // quick_sort_time(b1, input_size, time1);
         if (algorithm2 == "selection")
         {
             selection_sort_comp(a2, input_size, count_comp2);
@@ -1497,8 +1528,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "merge")
         {
-          //  merge_sort_comp(a2, input_size, count_comp2);
-          //  merge_sort_time(b2, input_size, time2);
+            //  merge_sort_comp(a2, input_size, count_comp2);
+            //  merge_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "insertion")
         {
@@ -1547,13 +1578,13 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "quick")
         {
-           // quick_sort_comp(a2, input_size, count_comp2);
-            //quick_sort_time(b2, input_size, time2);
+            // quick_sort_comp(a2, input_size, count_comp2);
+            // quick_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "merge")
         {
-            //merge_sort_comp(a2, input_size, count_comp2);
-            //merge_sort_time(b2, input_size, time2);
+            // merge_sort_comp(a2, input_size, count_comp2);
+            // merge_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "insertion")
         {
@@ -1563,8 +1594,8 @@ void command_4(int argc,  char* argv[]) {
     }
     else if (algorithm1 == "merge")
     {
-       // merge_sort_comp(a1, input_size, count_comp1);
-       // merge_sort_time(b1, input_size, time1);
+        // merge_sort_comp(a1, input_size, count_comp1);
+        // merge_sort_time(b1, input_size, time1);
         if (algorithm2 == "selection")
         {
             selection_sort_comp(a2, input_size, count_comp2);
@@ -1602,8 +1633,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "quick")
         {
-         //   quick_sort_comp(a2, input_size, count_comp2);
-           // quick_sort_time(b2, input_size, time2);
+            //   quick_sort_comp(a2, input_size, count_comp2);
+            // quick_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "shell")
         {
@@ -1657,8 +1688,8 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "quick")
         {
-         //   quick_sort_comp(a2, input_size, count_comp2);
-        //    quick_sort_time(b2, input_size, time2);
+            //   quick_sort_comp(a2, input_size, count_comp2);
+            //    quick_sort_time(b2, input_size, time2);
         }
         else if (algorithm2 == "shell")
         {
@@ -1667,16 +1698,16 @@ void command_4(int argc,  char* argv[]) {
         }
         else if (algorithm2 == "merge")
         {
-          //  merge_sort_comp(a2, input_size, count_comp2);
-           // merge_sort_time(b2, input_size, time2);
+            //  merge_sort_comp(a2, input_size, count_comp2);
+            // merge_sort_time(b2, input_size, time2);
         }
     }
 
-    //output
+    // output
     cout << "Running time: " << time1 << " | " << time2 << endl;
     cout << "Comparisions: " << fixed << setprecision(5) << count_comp1 << " | " << count_comp2 << endl;
-    delete[]a1;
-    delete[]b1;
-    delete[]a2;
-    delete[]b2;
+    delete[] a1;
+    delete[] b1;
+    delete[] a2;
+    delete[] b2;
 }
