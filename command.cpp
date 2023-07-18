@@ -66,11 +66,11 @@ void command_2(int argc, char *argv[])
     }
     else if (order == "-nsorted")
     {
-        GenerateData(a, input_size, 1);
+        GenerateData(a, input_size, 3);
     }
     else if (order == "-sorted")
     {
-        GenerateData(a, input_size, 3);
+        GenerateData(a, input_size, 1);
     }
     else if (order == "-rev")
     {
@@ -88,6 +88,26 @@ void command_2(int argc, char *argv[])
     cout << "-----------------------------------" << endl;
     if (algorithm == "selection")
     {
+        
+        if (output == "-time")
+        {
+
+            selection_sort_time(a, input_size, time);
+            cout << "Running time: " << time << endl;
+        }
+        else if (output == "-comp")
+        {
+
+            selection_sort_comp(a, input_size, count_comp);
+            cout << "Comparisions: " << count_comp << endl;
+        }
+        else if (output == "-both")
+        {
+            selection_sort_comp(a, input_size, count_comp);
+            selection_sort_time(b, input_size, time);
+            cout << "Running time: " << time << endl;
+            cout << "Comparisions: " << count_comp << endl;
+        }
     }
     else if (algorithm == "bubble")
     {
@@ -221,7 +241,7 @@ void command_2(int argc, char *argv[])
     }
     else if (algorithm == "quick")
     {
-        unsigned long long count = 0;
+        
         if (output == "-time")
         {
             quick_sort_time(a, input_size, time);
@@ -334,7 +354,7 @@ void command_3(int argc, char *argv[])
     cout << "Algorithm: " << algorithm_sort << endl;
     cout << "Input size: " << input_size << endl;
 
-    string input_order[] = {"Randomize", "Nearly Sorted", "Sorted", "Reversed"};
+    string input_order[] = {"Randomize",  "Reversed", "Sorted","Nearly Sorted"};
     for (int i = 0; i < 4; i++)
     {
         int *a = new int[input_size];
@@ -342,7 +362,7 @@ void command_3(int argc, char *argv[])
         GenerateData(a, input_size, i);
         cout << "\nInput order: " << input_order[i] << endl;
         cout << "-------------------------\n";
-
+        memcpy( a1, a , sizeof(int )*input_size );
         if (algorithm_sort.find("merge") != string::npos)
         {
             long long count_comp = 0;
