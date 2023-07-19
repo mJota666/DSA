@@ -602,10 +602,7 @@ void command_3(int argc, char *argv[])
         a1 = nullptr;
     }
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
 void command_5(int argc, char *argv[])
 {
     int n = stoi(argv[4]);
@@ -676,11 +673,8 @@ void command_5(int argc, char *argv[])
     }
     else if (!strcmp(sort_algorithms_1, "merge-sort"))
     {
-<<<<<<< HEAD
         merge_sort_comp(data1_comp, n, cmp_sort_1);
-=======
-        merge_sort_comp(data1_comp, n, count_quick_comp_1);
->>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
+
         merge_sort_time(data1_time, n, time_sort_1);
     }
     else if (!strcmp(sort_algorithms_1, "insertion-sort"))
@@ -695,11 +689,8 @@ void command_5(int argc, char *argv[])
     }
     else if (!strcmp(sort_algorithms_1, "bubble-sort"))
     {
-<<<<<<< HEAD
         bubble_sort_comp(data1_comp, n, cmp_sort_1);
-=======
-        bubble_sort_comp(data1_comp, n, count_quick_comp_1);
->>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
+
         bubble_sort_time(data1_time, n, time_sort_1);
     }
     else if (!strcmp(sort_algorithms_1, "heap-sort"))
@@ -716,11 +707,8 @@ void command_5(int argc, char *argv[])
     delete[] data1_time;
     memcpy(data2_comp, data, n * 4);
     memcpy(data2_time, data, n * 4);
-<<<<<<< HEAD
         if (!strcmp(sort_algorithms_2, "quick-sort"))
-=======
-    if (!strcmp(sort_algorithms_2, "quick-sort"))
->>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
+
     {
         quick_sort_comp(data2_comp, n, count_quick_comp_2);
         quick_sort_time(data2_time, n, time_sort_2);
@@ -735,7 +723,6 @@ void command_5(int argc, char *argv[])
         counting_sort_comp(data2_comp, n, cmp_sort_2);
         counting_sort_time(data2_time, n, time_sort_2);
     }
-<<<<<<< HEAD
     else if (!strcmp(sort_algorithms_2, "radix-sort"))
     {
         radix_sort_comp(data2_comp, n, cmp_sort_2);
@@ -776,8 +763,6 @@ void command_5(int argc, char *argv[])
         selection_sort_comp(data2_comp, n, cmp_sort_2);
         selection_sort_time(data2_time, n, time_sort_2);
     }
-=======
->>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
     else
     {
         cout << "No sort 2 found" << endl;
@@ -788,7 +773,6 @@ void command_5(int argc, char *argv[])
     cout << "Input order: " << argv[5] << endl;
     cout << "---------------------------" << endl;
     cout << "Running time: " << setprecision(5) << fixed << time_sort_1 << " | " << setprecision(5) << fixed << time_sort_2 << endl;
-<<<<<<< HEAD
     if (!strcmp(sort_algorithms_1, "quick-sort") &&!strcmp(sort_algorithms_2, "quick-sort") ){
         cout << "Comparsions : " << count_quick_comp_1 << " | " << count_quick_comp_2 << endl;
     }
@@ -799,12 +783,7 @@ void command_5(int argc, char *argv[])
     else if ( !strcmp(sort_algorithms_1, "quick-sort")){
          cout << "Comparsions : " << count_quick_comp_1 << " | " << cmp_sort_2 << endl;
     }
-=======
-    if (!strcmp(sort_algorithms_2, "quick-sort"))
-    {
-        cout << "Comparsions : " << count_quick_comp_1 << " | " << count_quick_comp_2 << endl;
-    }
->>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
+
     else
     {
         cout << "Comparsions : " << cmp_sort_1 << " | " << cmp_sort_2 << endl;
@@ -817,11 +796,6 @@ void command_5(int argc, char *argv[])
     delete[] sort_algorithms_2;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 59d917552a20226f3a7cdbc70263d32b2b819507
 void output_file(int n)
 {
     int *a = new int[n];
