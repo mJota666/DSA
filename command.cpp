@@ -353,7 +353,7 @@ void command_3(int argc, char *argv[])
     cout << "Algorithm: " << algorithm_sort << endl;
     cout << "Input size: " << input_size << endl;
 
-    string input_order[] = {"Randomize", "Sorted", "Nearly Sorted", "Reversed"};
+    string input_order[] = {"Randomize", "Nearly Sorted", "Sorted", "Reversed"};
     for (int i = 0; i < 4; i++)
     {
         int *a = new int[input_size];
@@ -361,17 +361,25 @@ void command_3(int argc, char *argv[])
         int type_generator = 0;
         if (i == 1)
         {
-            type_generator = 1;
+            type_generator = 3;
         }
         else if (i == 2)
         {
-            type_generator = 3;
+            type_generator = 1;
         }
         else if (i == 3)
         {
             type_generator = 2;
         }
         GenerateData(a, input_size, type_generator);
+        string file_name = "input_";
+        file_name += to_string(i + 1) + ".txt";
+        ofstream output(file_name);
+        output << input_size << endl;
+        for (int i = 0; i < input_size; i++) {
+            output << a[i] << ' ';
+        }
+        output.close();
         cout << "\nInput order: " << input_order[i] << endl;
         cout << "-------------------------\n";
         memcpy(a1, a, sizeof(int) * input_size);
