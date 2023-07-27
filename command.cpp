@@ -1003,7 +1003,7 @@ void command_1(int argc, char *argv[])
         }
     }
 
-    /*else if (algorithm_sort == "quick")
+    else if (algorithm_sort == "quick")
     {
         if (output == "-time")
         {
@@ -1022,7 +1022,7 @@ void command_1(int argc, char *argv[])
             cout << "Running time: " << time << endl;
             cout << "Comparisions: " << count_comp << endl;
         }
-    }*/
+    }
     else if (algorithm_sort == "shell")
     {
         if (output == "-time")
