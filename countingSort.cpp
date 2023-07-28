@@ -11,8 +11,10 @@ int max_value_comp(int *arr, int n, long long &count_comp)
         }
     }
     count_comp += n;
+//cout << max_value << endl;
     return max_value;
 }
+
 void counting_sort_comp(int *arr, int capacity, long long &count_comp)
 {
     int RANGE = max_value_comp(arr, capacity, count_comp);
@@ -23,21 +25,26 @@ void counting_sort_comp(int *arr, int capacity, long long &count_comp)
     {
         ++count[arr[i]];
     }
-    count_comp += (capacity + 1);
+    count_comp += capacity;
     for (int i = 1; i <= RANGE; ++i)
     {
         count[i] += count[i - 1];
     }
-    count_comp += (RANGE + 1);
+    count_comp += RANGE;
     for (int i = capacity - 1; i >= 0; i--)
     {
         output[count[arr[i]] - 1] = arr[i];
         --count[arr[i]];
     }
-    count_comp += (capacity + 1);
+    count_comp += capacity;
+    for (int i = 0; i < capacity; i++)
+    {
+        arr[i] = output[i];
+    }
     delete[] output;
     delete[] count;
 }
+
 int max_value(int *arr, int n)
 {
     int max_value = arr[0];
@@ -70,6 +77,10 @@ void counting_sort_time(int *arr, int capacity, long double &time)
     {
         output[count[arr[i]] - 1] = arr[i];
         --count[arr[i]];
+    }
+    for (int i = 0; i < capacity; i++)
+    {
+        arr[i] = output[i];
     }
     delete[] output;
     delete[] count;
